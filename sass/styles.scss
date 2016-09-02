@@ -1,0 +1,359 @@
+@import "susy";
+// @import "breakpoints";
+
+@import "base/index";
+@import "variables/index";
+@import "mixins/index";
+@import "elements/index";
+
+.display-width {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	// width: 32%;
+
+	.content-page {
+		@include full;
+	}
+
+	h4, p {
+		display: none;
+	}
+
+	.content-section {
+		margin: 0;
+		padding: 0;
+		min-height: $row-height;
+
+		&:after {
+			display: block;
+			padding: 6px;
+			font-weight: bold;
+		}
+	}
+
+	.content-section:nth-of-type(1) {
+		background-color: $color-first;
+
+		&:after {
+			content: "1";
+			color: color-contrast($color-first);
+		}
+	}
+
+	.content-section:nth-of-type(2) {
+		background-color: $color-second;
+
+		&:after {
+			content: "2";
+			color: color-contrast($color-second);
+		}
+	}
+
+	.content-section:nth-of-type(3) {
+		background-color: $color-third;
+
+		&:after {
+			content: "3";
+			color: color-contrast($color-third);
+		}
+	}
+
+	&.display-width-small {
+		// background-color: lighten($color-first, 5%);
+		width: 20%;
+
+		.content-page {
+
+			.content-page-inner {
+				margin: 0 auto;
+				width: $small-display-width;
+			}
+		}
+	}
+
+	&.display-width-medium {
+		// background-color: lighten($color-second, 5%);
+		width: 30%;
+		
+		.content-page {
+
+			.content-page-inner {
+				margin: 0 auto;
+				width: $medium-display-width;
+			}
+		}
+	}
+
+	&.display-width-large {
+		// background-color: lighten($color-third, 5%);
+		width: 40%;
+		
+		.content-page {
+
+			.content-page-inner {
+				margin: 0 auto;
+				width: $large-display-width;
+			}
+		}
+	}
+}
+
+
+// --- Stone ---------------------------------------
+.content-layout-stone {
+
+	.display-width-large,
+	.display-width-medium {
+
+		.content-section:nth-of-type(1) {
+			@include span(3 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(2) {
+			@include span(last 9 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(3) {
+			@include full;
+		}
+	}
+}
+
+.content-layout-stone-flipped {
+
+	.display-width-large,
+	.display-width-medium {
+
+		.content-section:nth-of-type(1) {
+			@include span(last 3 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(2) {
+			@include span(9 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(3) {
+			@include full;
+		}
+	}
+}
+
+.content-layout-stone-2 {
+
+	.display-width-large,
+	.display-width-medium {
+		
+		.content-section:nth-of-type(1) {
+			@include span(last 9 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(2) {
+			@include span(3 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(3) {
+			@include full;
+		}
+	}
+}
+
+.content-layout-stone-flipped-2 {
+
+	.display-width-large,
+	.display-width-medium {
+
+		.content-section:nth-of-type(2) {
+			@include span(last 3 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(1) {
+			@include span(9 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(3) {
+			@include full;
+		}
+	}
+}
+
+// --- Grass ----------------------------------------
+.content-layout-grass {
+
+	.display-width-large,
+	.display-width-medium {
+
+		.content-section:nth-of-type(1) {
+			@include span(4 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(2) {
+			@include span(last 8 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(3) {
+			@include full;
+		}
+	}
+}
+
+.content-layout-grass-flipped {
+
+	.display-width-large,
+	.display-width-medium {
+
+		.content-section:nth-of-type(1) {
+			@include span(last 4 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(2) {
+			@include span(8 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(3) {
+			@include full;
+		}
+	}
+}
+
+.content-layout-grass-2 {
+
+	.display-width-large,
+	.display-width-medium {
+		
+		.content-section:nth-of-type(1) {
+			@include span(last 8 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(2) {
+			@include span(4 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(3) {
+			@include full;
+		}
+	}
+}
+
+.content-layout-grass-flipped-2 {
+
+	.display-width-large,
+	.display-width-medium {
+
+		.content-section:nth-of-type(2) {
+			@include span(last 4 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(1) {
+			@include span(8 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(3) {
+			@include full;
+		}
+	}
+}
+
+
+// --- Dirt ----------------------------------------
+.content-layout-dirt {
+
+	.display-width-large,
+	.display-width-medium {
+
+		.content-section:nth-of-type(1) {
+			@include span(6 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(2) {
+			@include span(last 6 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(3) {
+			@include full;
+		}
+	}
+}
+
+.content-layout-dirt-flipped {
+
+	.display-width-large,
+	.display-width-medium {
+
+		.content-section:nth-of-type(1) {
+			@include span(last 6 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(2) {
+			@include span(6 of 12 no-gutters);
+			min-height: 2*$row-height;
+		}
+
+		.content-section:nth-of-type(3) {
+			@include full;
+		}
+	}
+}
+
+
+// --- Cobblestone ----------------------------------------
+.content-layout-cobblestone {
+
+	.display-width-large {
+
+		.content-section:nth-of-type(1) {
+			@include span(4 of 12);
+			min-height: 3*$row-height;
+		}
+
+		.content-section:nth-of-type(2) {
+			@include span(4 of 12);
+			min-height: 3*$row-height;
+		}
+
+		.content-section:nth-of-type(3) {
+			@include span(last 4 of 12);
+			min-height: 3*$row-height;
+		}
+	}
+}
+
+.content-layout-cobblestone-flipped {
+
+	.display-width-large {
+
+		.content-section:nth-of-type(1) {
+			@include span(last 4 of 12);
+			min-height: 3*$row-height;
+		}
+
+		.content-section:nth-of-type(2) {
+			@include span(4 of 12);
+			min-height: 3*$row-height;
+		}
+
+		.content-section:nth-of-type(3) {
+			@include span(4 of 12);
+			min-height: 3*$row-height;
+		}
+	}
+}
